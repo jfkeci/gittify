@@ -1,0 +1,1 @@
+git log --since="2022-01-01" --author="jfkeci" --pretty=format:'{%n "commit": "%H",%n "author": "%an <%ae>",%n "date": "%ad",%n "message": "%f"%n},' | sed '$ s/,$//' | awk 'BEGIN {print "["} {print} END {print "]"}' | jq -c .
