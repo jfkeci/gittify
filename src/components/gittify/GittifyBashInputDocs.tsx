@@ -7,6 +7,9 @@ export const GittifyBashInputDocs = () => {
     <Box p={5}>
       <OrderedList mb={5}>
         <ListItem>Input your username</ListItem>
+        <ListItem>
+          Set the date from which you want to filter the commits
+        </ListItem>
         <ListItem>Copy the script</ListItem>
         <ListItem>Navigate to your project via terminal</ListItem>
         <ListItem>Use the script</ListItem>

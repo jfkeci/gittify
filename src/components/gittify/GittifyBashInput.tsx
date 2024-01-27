@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useGittifyBashStore from "../../store/gittify-bash.store";
-import { Button, Flex, Input, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Input, Text, Tooltip } from "@chakra-ui/react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -9,6 +9,7 @@ export const GittifyBashInput = () => {
 
   const {
     updateBashScriptSnippet,
+    setCommitSinceDate,
     bashScriptSnippet,
     updateBashScript,
     setAuthorName,
@@ -39,6 +40,19 @@ export const GittifyBashInput = () => {
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAuthorName(event.target.value);
+
+    updateBashScriptSnippet();
+    updateBashScript();
+  };
+
+  const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const date = new Date(event.target.value);
+    const formattedDate = `${date.getFullYear()}-${String(
+      date.getMonth() + 1
+    ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+
+    setCommitSinceDate(formattedDate);
+
     updateBashScriptSnippet();
     updateBashScript();
   };
@@ -52,9 +66,24 @@ export const GittifyBashInput = () => {
         onChange={handleInputChange}
       />
 
-      <SyntaxHighlighter language="bash" style={solarizedlight}>
-        {bashScriptSnippet}
-      </SyntaxHighlighter>
+      <Tooltip label="Date from which you want to filter the commits">
+        <Input
+          size="md"
+          type="date"
+          placeholder="Date from which you want to filter the commits"
+          mt={1}
+          mb={1}
+          onChange={handleDateChange}
+        />
+      </Tooltip>
+
+      <Tooltip label={bashScript}>
+        <Box>
+          <SyntaxHighlighter language="bash" style={solarizedlight}>
+            {bashScriptSnippet}
+          </SyntaxHighlighter>
+        </Box>
+      </Tooltip>
 
       {isMessageShown && <Text p={3}>Successfully copied!</Text>}
 
