@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useGittifyBashStore from "../../store/gittify.store";
+import useGittifyBashStore from "../../store/gittify-bash.store";
 import { Button, Flex, Input, Text } from "@chakra-ui/react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
