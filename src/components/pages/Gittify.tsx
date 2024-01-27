@@ -6,6 +6,7 @@ import {
   CardHeader,
   Heading,
 } from "@chakra-ui/react";
+import { GittifyDocs } from "../gittify/GittifyDocs";
 import { GittifyBashInput } from "../gittify/GittifyBashInput";
 
 export const Gittify = () => {
@@ -18,7 +19,9 @@ export const Gittify = () => {
         <CardBody>
           <GittifyBashInput />
         </CardBody>
-        <CardFooter></CardFooter>
+        <CardFooter>
+          <GittifyDocs />
+        </CardFooter>
       </Card>
     </Box>
   );

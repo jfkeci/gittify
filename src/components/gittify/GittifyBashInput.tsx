@@ -1,9 +1,8 @@
+import { useState } from "react";
+import useGittifyStore from "../../store/gittify.store";
 import { Button, Flex, Input, Text } from "@chakra-ui/react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
-import useGittifyStore from "../../store/gittify.store";
-import { useState } from "react";
-import { GittifyDocs } from "./GittifyDocs";
 
 export const GittifyBashInput = () => {
   const [isMessageShown, setIsMessageShown] = useState(false);
@@ -67,8 +66,6 @@ export const GittifyBashInput = () => {
       >
         <strong>Copy</strong>
       </Button>
-
-      <GittifyDocs />
     </Flex>
   );
 };
