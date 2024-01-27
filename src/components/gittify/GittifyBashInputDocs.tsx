@@ -13,10 +13,13 @@ export const GittifyBashInputDocs = () => {
         <ListItem>Copy the json output</ListItem>
       </OrderedList>
 
-      <Text mb={3}>
+      <Text>
         The purpose of this script is to allow you to input your GitHub username
-        that you use on your project. Once you've done that, navigate to your
-        project (that uses Git) via terminal and run the generated script.
+        that you use on your project.
+      </Text>
+      <Text mb={3}>
+        Once you've done that, navigate to your project (that uses Git) via
+        terminal and run the generated script.
       </Text>
 
       <Text mb={3}>
