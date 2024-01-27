@@ -16,9 +16,11 @@ export const Gittify = () => {
         <CardHeader>
           <Heading size="md"> Commit script </Heading>
         </CardHeader>
+
         <CardBody>
           <GittifyBashInput />
         </CardBody>
+
         <CardFooter>
           <GittifyDocs />
         </CardFooter>

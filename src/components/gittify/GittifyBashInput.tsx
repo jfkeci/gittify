@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useGittifyStore from "../../store/gittify.store";
+import useGittifyBashStore from "../../store/gittify.store";
 import { Button, Flex, Input, Text } from "@chakra-ui/react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -14,7 +14,7 @@ export const GittifyBashInput = () => {
     setAuthorName,
     bashScript,
     authorName,
-  } = useGittifyStore();
+  } = useGittifyBashStore();
 
   const showMessage = () => {
     setIsMessageShown(true);
